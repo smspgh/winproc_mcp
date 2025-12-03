@@ -107,7 +107,7 @@ For direct command-line access without Claude Code, use the included `winproc-cl
 ### Option 1: Automated Setup (Recommended)
 ```powershell
 # Clone and setup in one go
-git clone <repository-url> winproc_mcp
+git clone https://github.com/smspgh/winproc_mcp winproc_mcp
 cd winproc_mcp
 pip install -r requirements.txt
 python winproc_mcp_setup.py
@@ -177,21 +177,19 @@ Use `.\winproc-cli.ps1 definitions [category]` to learn what each metric means:
 ### 🔍 Enhanced find-service Output
 The `find-service` command now shows comprehensive details for each matching service:
 ```
-Finding services matching: *D2*
+Finding services matching: *mongo*
 
-Found 1 service(s) matching '*D2*'
+Found 1 service(s) matching '*mongo*'
 
-=== D2LockerService ===
-Display Name: D2Locker Web Application
+=== MongoDB ===
+Display Name: MongoDB Server (MongoDB)
 Status: Running
 Start Type: Automatic
-Executable: "C:\path\to\service.exe"
-Run As: LocalSystem
-Description: Service description here...
-Associated Processes:
-  └─ D2LockerService (PID: 1234) - Memory: 45.2 MB
+Executable: "C:\Program Files\MongoDB\Server\8.2\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\8.2\bin\mongod.cfg" --service
+Run As: NT AUTHORITY\NetworkService
+Description: MongoDB Database Server (MongoDB)
 Listening Ports:
-  └─ Port 5000 [0.0.0.0]
+  └─ Port 27017 [127.0.0.1]
 ```
 
 ## Claude Code Usage Examples
